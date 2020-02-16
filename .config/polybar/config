@@ -1,0 +1,326 @@
+[colors]
+
+background = #222222
+;background = ${xrdb:color0:#222}
+foreground = #ffffff
+;foreground = ${xrdb:color7:#222}
+
+background_module = #444444
+foreground_module = ${colors.foreground}
+background_module-prefix = #ffee82
+foreground_module-prefix = ${colors.background}
+
+background_bspwm-focused = #ffee82
+foreground_bspwm-focused = ${colors.background}
+foreground_bspwm-occupied = #ffdd00
+
+alert = #bd2c40
+
+[settings]
+
+; nothing atm
+
+[global/wm]
+
+margin-top = 0
+
+[bar/mybar_full]
+
+monitor =
+
+;wm-restack = bspwm
+override-redirect = true
+
+width = 100%
+height = 19
+line-size = 0
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+module-margin = 1
+
+font-0 = Hack Nerd Font:pixelsize=11;2
+font-1 = DejaVu SansMono Nerd Font:pixelsize=11;2
+font-2 = DejaVu Sans Mono:pixelsize=11;2
+font-3 = Liberation Mono:pixelsize=11;2
+
+modules-left = bspwm
+modules-center = date
+modules-right = cpu memory battery powermenu tray_prefix
+
+tray-position = right
+tray-padding = 6
+tray-background = ${colors.background_module}
+
+[bar/mybar_DP-1-1]
+
+inherit = bar/mybar_full
+
+monitor = "DP-1-1"
+modules-right = powermenu tray_prefix
+
+[bar/mybar_DP-1-3]
+
+inherit = bar/mybar_full
+
+monitor = "DP-1-3"
+modules-right = cpu memory battery
+tray-position = none
+
+[module/bspwm]
+
+type = internal/bspwm
+
+reverse-scroll = true
+
+format = <label-state>
+
+label-empty = %name%
+label-empty-padding = 2
+
+label-occupied = %name%
+label-occupied-padding = 2
+label-occupied-foreground = ${colors.foreground_bspwm-occupied}
+
+label-focused = %name%
+label-focused-background = ${colors.background_bspwm-focused}
+label-focused-foreground = ${colors.foreground_bspwm-focused}
+label-focused-padding = 2
+
+label-urgent = !%name%!
+label-urgent-foreground = ${colors.alert}
+label-urgent-padding = 1
+
+[module/xwindow]
+
+type = internal/xwindow
+
+label = %title:0:30:...%
+
+[module/date]
+
+type = internal/date
+
+interval = 1
+
+label = %date% %time%
+
+date = "%a, %d/%m/%Y"
+date-alt = "%a, %d/%m/%Y"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+[module/xbacklight]
+
+type = internal/xbacklight
+
+format-prefix = BL
+format = <bar>
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+
+type = internal/backlight
+
+inherit = module/xbacklight
+
+card = intel_backlight
+
+[module/cpu]
+
+type = internal/cpu
+
+interval = 1
+
+format = <label>
+format-prefix = "CPU"
+
+format-background = ${colors.background_module}
+format-foreground = ${colors.foreground_module}
+format-prefix-background = ${colors.background_module-prefix}
+format-prefix-foreground = ${colors.foreground_module-prefix}
+format-prefix-padding = 1
+label-padding = 1
+
+label = %percentage-cores%
+
+[module/memory]
+
+type = internal/memory
+
+interval = 1
+
+format = <label>
+format-prefix = "RAM"
+
+format-background = ${colors.background_module}
+format-foreground = ${colors.foreground_module}
+format-prefix-background = ${colors.background_module-prefix}
+format-prefix-foreground = ${colors.foreground_module-prefix}
+format-prefix-padding = 1
+label-padding = 1
+
+label = %percentage_used%%
+
+[module/pulseaudio]
+
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+
+label-volume = VOL %percentage%%
+label-volume-foreground = ${root.foreground}
+
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/alsa]
+
+type = internal/alsa
+
+format-volume = <label-volume> <bar-volume>
+
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+
+type = internal/battery
+
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <label-charging>
+format-charging-prefix = BAT
+format-discharging = <label-discharging>
+format-discharging-prefix = BAT
+format-full = <label-full>
+format-full-prefix = BAT
+
+format-charging-background = ${colors.background_module}
+format-charging-foreground = ${colors.foreground_module}
+format-charging-prefix-background = ${colors.background_module-prefix}
+format-charging-prefix-foreground = ${colors.foreground_module-prefix}
+format-charging-prefix-padding = 1
+label-charging-padding = 1
+format-discharging-background = ${colors.background_module}
+format-discharging-foreground = ${colors.foreground_module}
+format-discharging-prefix-background = ${colors.background_module-prefix}
+format-discharging-prefix-foreground = ${colors.foreground_module-prefix}
+format-discharging-prefix-padding = 1
+label-discharging-padding = 1
+format-full-background = ${colors.background_module}
+format-full-foreground = ${colors.foreground_module}
+format-full-prefix-background = ${colors.background_module-prefix}
+format-full-prefix-foreground = ${colors.foreground_module-prefix}
+format-full-prefix-padding = 1
+label-full-padding = 1
+
+label-charging = %percentage_raw%% charging
+label-discharging = %percentage_raw%% discharging
+label-full = %percentage_raw%% full
+
+[module/powermenu]
+
+type = custom/menu
+
+expand-right = false
+
+label-open = 襤
+label-close = CANCEL
+label-separator = |
+
+label-open-background = ${colors.background_module-prefix}
+label-open-foreground = ${colors.foreground_module-prefix}
+label-open-padding = 1
+label-close-background = ${colors.background_module-prefix}
+label-close-foreground = ${colors.foreground_module-prefix}
+label-close-padding = 1
+label-separator-background = ${colors.background_module-prefix}
+label-separator-foreground = ${colors.foreground_module-prefix}
+menu-0-0-background = ${colors.background_module}
+menu-0-0-foreground = ${colors.foreground_module}
+menu-0-0-padding = 1
+menu-0-1-background = ${colors.background_module}
+menu-0-1-foreground = ${colors.foreground_module}
+menu-0-1-padding = 1
+menu-1-0-background = ${colors.background_module}
+menu-1-0-foreground = ${colors.foreground_module}
+menu-1-0-padding = 1
+menu-2-0-background = ${colors.background_module}
+menu-2-0-foreground = ${colors.foreground_module}
+menu-2-0-padding = 1
+
+menu-0-0 = power off
+menu-0-0-exec = menu-open-1
+menu-0-1 = reboot
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = Power off now!
+menu-1-0-exec = poweroff
+
+menu-2-0 = Reboot now!
+menu-2-0-exec = reboot
+
+[module/tray_prefix]
+
+type = custom/text
+
+content = TRAY
+
+content-background = ${colors.background_module-prefix}
+content-foreground = ${colors.foreground_module-prefix}
+content-padding = 1
+
+; vim:ft=dosini
