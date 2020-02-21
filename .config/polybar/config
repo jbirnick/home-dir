@@ -267,9 +267,9 @@ format-full-prefix-foreground = ${colors.foreground_module-prefix}
 format-full-prefix-padding = 1
 label-full-padding = 1
 
-label-charging = %percentage_raw%% charging
-label-discharging = %percentage_raw%% discharging
-label-full = %percentage_raw%% full
+label-charging = %percentage%% charging
+label-discharging = %percentage%% discharging
+label-full = %percentage%% full
 
 [module/powermenu]
 
