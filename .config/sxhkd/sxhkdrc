@@ -12,11 +12,11 @@ super + alt + {c,r}
 
 # .desktop/binary launcher
 super + {_, shift + }@space
-	{j4-dmenu-desktop --term=termite,dmenu_run}
+	{j4-dmenu-desktop --term=mate-terminal,dmenu_run}
 
 # terminal emulator
 super + Return
-	termite
+	mate-terminal
 
 ## WINDOW GENERAL
 
