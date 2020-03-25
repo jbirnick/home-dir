@@ -74,9 +74,13 @@ super + ctrl + shift + space
 
 ## DESKTOPS AND GLOBAL FOCUS/SWAP
 
-# focus or send to the given desktop
-super + {_,shift + }{1-3,q,w,e}
-	bspc {desktop -f,node -d} '^{1-3,4,5,6}'
+# focus given desktop
+super + {1-3,q,w,e}
+	bspc desktop -f '^{1-3,4,5,6}'
+
+# send to given desktop
+super + shift + {1-3,q,w,e}
+	bspc node -d '^{1-3,4,5,6}' -f
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
