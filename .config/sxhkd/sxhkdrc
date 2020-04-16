@@ -27,8 +27,8 @@ super + {_,shift + }c
 ## LOCAL FOCUS/SWAP
 
 # focus/swap the node in the given direction
-super + {_,shift + }{h,j,k,l}
-	bspc node -{f,s} {west,south,north,east}
+super + {_,shift + }{j,k,l,semicolon}
+	bspc node -{f,s} {south,north,west,east}
 
 # focus the node for the given path jump
 super + {p,b,comma,period}
@@ -41,12 +41,12 @@ super + {_,shift + }n
 ## WINDOW RESIZING
 
 # expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + alt + {j,k,l,semicolon}
+	bspc node -z {bottom 0 20,top 0 -20,left -20 0,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super + alt + shift + {j,k,l,semicolon}
+	bspc node -z {top 0 20,bottom 0 -20,right -20 0,left 20 0}
 
 ## FLOATING WINDOW MOVING
 
@@ -57,8 +57,8 @@ super + {Left,Down,Up,Right}
 ## WINDOW PRESELECTION
 
 # preselect the direction
-super + ctrl + {h,j,k,l}
-	bspc node -p {west,south,north,east}
+super + ctrl + {j,k,l,semicolon}
+	bspc node -p {south,north,west,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
