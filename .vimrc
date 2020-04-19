@@ -9,6 +9,24 @@ Plug 'doums/darcula'
 
 call plug#end()
 
+" cursor
+
+set mouse=a
+set cursorline
+set scrolloff=5
+
+" indentation
+
+set shiftwidth=2
+set autoindent
+set smartindent
+
+" tabs
+
+set tabstop=4
+set expandtab
+set smarttab
+
 " lightline issue
 
 set laststatus=2
@@ -25,18 +43,6 @@ set termguicolors
 " set lightline color scheme
 
 let g:lightline = { 'colorscheme': 'darculaOriginal' }
-
-" indentation
-
-set shiftwidth=2
-set autoindent
-set smartindent
-
-" tabs
-
-set tabstop=4
-set expandtab
-set smarttab
 
 " remappings
 
