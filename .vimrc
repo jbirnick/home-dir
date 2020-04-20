@@ -13,7 +13,7 @@ call plug#end()
 
 set mouse=a
 set cursorline
-set scrolloff=5
+set scrolloff=3
 
 " indentation
 
