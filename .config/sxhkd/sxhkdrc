@@ -75,12 +75,12 @@ super + ctrl + shift + space
 ## DESKTOPS AND GLOBAL FOCUS/SWAP
 
 # focus given desktop
-super + {1-3,q,w,e}
-	bspc desktop -f '^{1-3,4,5,6}'
+super + {s,d,f,w,e,r}
+	bspc desktop -f '^{1,2,3,4,5,6}'
 
 # send to given desktop
-super + shift + {1-3,q,w,e}
-	bspc node --to-desktop '^{1-3,4,5,6}' --follow
+super + shift + {s,d,f,w,e,r}
+	bspc node --to-desktop '^{1,2,3,4,5,6}' --follow
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
@@ -101,7 +101,7 @@ super + {o,i}
 	bspc wm -h on
 
 # send the newest marked node to the newest preselected node
-super + y
+super + h
 	bspc node newest.marked.local -n newest.!automatic.local
 
 # swap the current node and the (gobally) biggest node
@@ -111,7 +111,7 @@ super + g
 ## WINDOW STATE AND FLAGS
 
 # set the window state
-super + {t,shift + t,s,f}
+super + {t,shift + t,y,u}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
