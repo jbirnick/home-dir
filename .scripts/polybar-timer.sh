@@ -1,0 +1,1 @@
+/home/johann/Coding/polybar-timer/polybar-timer.sh
