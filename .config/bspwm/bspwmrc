@@ -33,9 +33,6 @@ sxhkd &
 # set cursor
 xsetroot -cursor_name left_ptr &
 
-# set wallpaper
-feh --no-fehbg --bg-fill ~/.wallpaper/forest.jpg &
-
 # start polybar
 killall -q polybar
 case $monitorsetup in
