@@ -1,0 +1,1 @@
+/home/johann/Coding/polybar-todoist/polybar-todoist.py
