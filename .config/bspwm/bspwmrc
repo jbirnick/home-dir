@@ -61,9 +61,6 @@ blueman-applet &
 killall -q clipmenud
 clipmenud &
 
-# optionally start ferdi
-~/.scripts/dmenu_no_yes.sh 'Start ferdi?' 'ferdi' &
-
 ## BSPWM CONFIG
 
 # general

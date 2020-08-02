@@ -347,7 +347,7 @@ type = custom/script
 exec = python -u ~/.scripts/polybar-todoist.py
 tail = true
 
-click-left = ferdi
+click-left = gtk-launch todoist
 
 format-background = ${colors.background_module}
 format-foreground = ${colors.foreground_module}

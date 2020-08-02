@@ -108,6 +108,14 @@ super + h
 super + g
 	bspc node -s biggest
 
+# toggle sticky-overlay
+super + a
+    ~/.scripts/bspwm-sticky-overlay.sh toggle
+
+# send to sticky-overlay
+super + shift + a
+    ~/.scripts/bspwm-sticky-overlay.sh addAndView $(bspc query -N -n focused)
+
 ## WINDOW STATE AND FLAGS
 
 # set the window state
