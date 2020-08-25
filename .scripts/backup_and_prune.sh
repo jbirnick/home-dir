@@ -52,6 +52,11 @@ borg create ::archived-documents_${suffix}    './Archived Documents'
 check_borg_return_code $?
 echo "finished."
 
+echo -n "Backing up library ... "
+borg create ::library_${suffix}               './Library'
+check_borg_return_code $?
+echo "finished."
+
 # prune
 
 echo -n "Pruning archives of documents ... "
@@ -66,6 +71,17 @@ echo "finished."
 
 echo -n "Pruning archives of archived documents ... "
 borg prune --prefix='archived-documents_' \
+  --keep-last=7 \
+  --keep-within=4d \
+  --keep-daily=3 \
+  --keep-weekly=4 \
+  --keep-monthly=4 \
+  --keep-yearly=-1
+check_borg_return_code $?
+echo "finished."
+
+echo -n "Pruning archives of library ... "
+borg prune --prefix='library_' \
   --keep-last=7 \
   --keep-within=4d \
   --keep-daily=3 \
