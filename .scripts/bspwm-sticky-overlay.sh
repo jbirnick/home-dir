@@ -21,7 +21,7 @@ case $1 in
     eval $1 view
     toggleHidden off
     ;;
-  list)echo "$(nodes)" ;;
+  list) echo "$(nodes)" ;;
   view) toggleHidden off ;;
   hide) toggleHidden on ;;
   toggle) toggleHidden

@@ -47,7 +47,7 @@ font-3 = Liberation Mono:pixelsize=11;2
 
 modules-left = bspwm
 modules-center = date timer
-modules-right = todoist battery powermenu tray_prefix
+modules-right = calendar todoist battery powermenu tray_prefix
 
 tray-position = right
 tray-padding = 6
@@ -58,7 +58,7 @@ tray-background = ${colors.background_module}
 inherit = bar/mybar_full
 
 monitor = "DP-1-1"
-modules-right = todoist powermenu tray_prefix
+modules-right = calendar todoist powermenu tray_prefix
 
 [bar/mybar_DP-1-3]
 
@@ -104,13 +104,10 @@ type = internal/date
 
 interval = 1
 
-label = %date% %time%
+label = %time%
 
-date = "%a, %d/%m/%Y"
-date-alt = "%a, %d/%m/%Y"
-
-time = %H:%M
-time-alt = %H:%M:%S
+time = "%a %d/%m/%Y %H:%M"
+time-alt = "%a %d/%m/%Y"
 
 [module/xbacklight]
 
@@ -351,5 +348,17 @@ click-left = gtk-launch todoist
 
 format-background = ${colors.background_module}
 format-foreground = ${colors.foreground_module}
+
+[module/calendar]
+
+type = custom/text
+
+content = ""
+
+click-left = google-calendar-dark
+
+content-background = ${colors.background_module-prefix}
+content-foreground = ${colors.foreground_module-prefix}
+content-padding = 1
 
 ; vim:ft=dosini
