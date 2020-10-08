@@ -47,7 +47,7 @@ font-3 = Liberation Mono:pixelsize=11;2
 
 modules-left = bspwm
 modules-center = date timer
-modules-right = calendar todoist battery powermenu tray_prefix
+modules-right = calendar todoist battery powermenu
 
 tray-position = right
 tray-padding = 6
@@ -239,11 +239,11 @@ adapter = AC
 full-at = 98
 
 format-charging = <label-charging>
-format-charging-prefix = BAT
+format-charging-prefix = 
 format-discharging = <label-discharging>
-format-discharging-prefix = BAT
+format-discharging-prefix = 
 format-full = <label-full>
-format-full-prefix = BAT
+format-full-prefix = 
 
 format-charging-background = ${colors.background_module}
 format-charging-foreground = ${colors.foreground_module}
@@ -264,9 +264,9 @@ format-full-prefix-foreground = ${colors.foreground_module-prefix}
 format-full-prefix-padding = 1
 label-full-padding = 1
 
-label-charging = %percentage%% charging
-label-discharging = %percentage%% discharging
-label-full = %percentage%% full
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
 
 [module/powermenu]
 
