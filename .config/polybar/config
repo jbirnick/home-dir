@@ -26,6 +26,7 @@ margin-top = 0
 [bar/mybar_full]
 
 monitor =
+bottom = true
 
 ;wm-restack = bspwm
 override-redirect = true
@@ -58,13 +59,15 @@ tray-background = ${colors.background_module}
 inherit = bar/mybar_full
 
 monitor = "DP-1-1"
-modules-right = calendar todoist powermenu tray_prefix
+bottom = true
+modules-right = calendar todoist powermenu
 
 [bar/mybar_DP-1-3]
 
 inherit = bar/mybar_full
 
 monitor = "DP-1-3"
+bottom = true
 modules-right = cpu memory battery
 tray-position = none
 
@@ -355,7 +358,7 @@ type = custom/text
 
 content = ""
 
-click-left = google-calendar-dark
+click-left = google-calendar-nativefier-dark
 
 content-background = ${colors.background_module-prefix}
 content-foreground = ${colors.foreground_module-prefix}
