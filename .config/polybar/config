@@ -327,13 +327,13 @@ content-padding = 1
 
 type = custom/script
 
-exec = ~/.scripts/polybar-timer.sh tail "祥 TMR" 5
+exec = ~/.scripts/polybar-timer.sh tail "精 TMR" 5
 tail = true
 
-click-left = ~/.scripts/polybar-timer.sh new 25 '﫜' 'notify-send -i amarok_clock "Session finished"' ; ~/.scripts/polybar-timer.sh update %pid%
+click-left = ~/.scripts/polybar-timer.sh new 25 '﫜' '' 'notify-send -i amarok_clock "Session finished"' ; ~/.scripts/polybar-timer.sh update %pid%
 click-middle = ~/.scripts/polybar-timer.sh cancel ; ~/.scripts/polybar-timer.sh update %pid%
-click-right = ~/.scripts/polybar-timer.sh new 5 '盛' 'notify-send -i amarok_clock "Break finished"' ; ~/.scripts/polybar-timer.sh update %pid%
-scroll-up = ~/.scripts/polybar-timer.sh increase 60 || ~/.scripts/polybar-timer.sh new 1 '祥' 'notify-send -u critical -i amarok_clock "Timer expired"' ; ~/.scripts/polybar-timer.sh update %pid%
+click-right = ~/.scripts/polybar-timer.sh togglepause ; ~/.scripts/polybar-timer.sh update %pid%
+scroll-up = ~/.scripts/polybar-timer.sh increase 60 || ~/.scripts/polybar-timer.sh new 1 '祥' '' 'notify-send -u critical -i amarok_clock "Timer expired"' ; ~/.scripts/polybar-timer.sh update %pid%
 scroll-down = ~/.scripts/polybar-timer.sh increase -60 ; ~/.scripts/polybar-timer.sh update %pid%
 
 format-background = ${colors.background_module-prefix}
