@@ -222,16 +222,6 @@ menu-1-0-exec = poweroff
 menu-2-0 = Reboot now!
 menu-2-0-exec = reboot
 
-[module/tray_prefix]
-
-type = custom/text
-
-content = TRAY
-
-content-background = ${colors.background_module-prefix}
-content-foreground = ${colors.foreground_module-prefix}
-content-padding = 1
-
 [module/timer]
 
 type = custom/script
