@@ -95,12 +95,6 @@ label-urgent = !%name%!
 label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 1
 
-[module/xwindow]
-
-type = internal/xwindow
-
-label = %title:0:30:...%
-
 [module/date]
 
 type = internal/date
@@ -111,32 +105,6 @@ label = %time%
 
 time = "%a %d/%m/%Y %H:%M"
 time-alt = "%a %d/%m/%Y"
-
-[module/xbacklight]
-
-type = internal/xbacklight
-
-format-prefix = BL
-format = <bar>
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
-
-[module/backlight-acpi]
-
-type = internal/backlight
-
-inherit = module/xbacklight
-
-card = intel_backlight
 
 [module/cpu]
 
@@ -173,65 +141,6 @@ format-prefix-padding = 1
 label-padding = 1
 
 label = %percentage_used%%
-
-[module/pulseaudio]
-
-type = internal/pulseaudio
-
-format-volume = <label-volume> <bar-volume>
-
-label-volume = VOL %percentage%%
-label-volume-foreground = ${root.foreground}
-
-label-muted = 🔇 muted
-label-muted-foreground = #666
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/alsa]
-
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 
