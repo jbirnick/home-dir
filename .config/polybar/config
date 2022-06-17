@@ -257,7 +257,7 @@ type = custom/text
 
 content = ""
 
-click-left = google-calendar-nativefier-dark
+click-left = /home/johann/Software/Calendar-linux-x64/Calendar
 
 content-background = ${colors.background_module-prefix}
 content-foreground = ${colors.foreground_module-prefix}
