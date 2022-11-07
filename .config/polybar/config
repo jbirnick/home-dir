@@ -48,7 +48,7 @@ font-3 = Liberation Mono:pixelsize=11;2
 
 modules-left = bspwm
 modules-center = date timer
-modules-right = calendar todoist battery powermenu
+modules-right = notes calendar todoist battery powermenu
 
 tray-position = right
 tray-padding = 6
@@ -60,7 +60,7 @@ inherit = bar/mybar_full
 
 monitor = "DP-1-1"
 bottom = true
-modules-right = calendar todoist powermenu
+modules-right = notes calendar todoist powermenu
 
 [bar/mybar_DP-1-3]
 
@@ -255,12 +255,24 @@ format-foreground = ${colors.foreground_module}
 
 type = custom/text
 
-content = ""
+content = ""
 
 click-left = /home/johann/Software/Calendar-linux-x64/Calendar
 
 content-background = ${colors.background_module-prefix}
-content-foreground = ${colors.foreground_module-prefix}
+content-foreground = #1A73E8
+content-padding = 1
+
+[module/notes]
+
+type = custom/text
+
+content = ""
+
+click-left = obsidian
+
+content-background = ${colors.background_module-prefix}
+content-foreground = #483699
 content-padding = 1
 
 ; vim:ft=dosini

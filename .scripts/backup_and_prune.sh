@@ -60,7 +60,7 @@ echo "finished."
 # prune
 
 echo -n "Pruning archives of documents ... "
-borg prune --prefix='documents_' \
+borg prune --glob-archives 'documents_*' \
   --keep-last=7 \
   --keep-within=7d \
   --keep-daily=7 \
@@ -70,7 +70,7 @@ check_borg_return_code $?
 echo "finished."
 
 echo -n "Pruning archives of archived documents ... "
-borg prune --prefix='archived-documents_' \
+borg prune --glob-archives 'archived-documents_*' \
   --keep-last=7 \
   --keep-within=4d \
   --keep-daily=3 \
@@ -81,7 +81,7 @@ check_borg_return_code $?
 echo "finished."
 
 echo -n "Pruning archives of library ... "
-borg prune --prefix='library_' \
+borg prune --glob-archives 'library_*' \
   --keep-last=7 \
   --keep-within=4d \
   --keep-daily=3 \
