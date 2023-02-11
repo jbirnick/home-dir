@@ -275,4 +275,40 @@ content-background = ${colors.background_module-prefix}
 content-foreground = #483699
 content-padding = 1
 
+[module/backlight]
+
+type = internal/backlight
+
+card = intel_backlight
+use-actual-brightness = true
+enable-scroll = true
+
+format = <label>
+label = %percentage%%
+
+format-prefix = "󰃜"
+
+format-background = ${colors.background_module}
+format-foreground = ${colors.foreground_module}
+format-prefix-background = ${colors.background_module-prefix}
+format-prefix-foreground = ${colors.foreground_module-prefix}
+format-prefix-padding = 1
+label-padding = 1
+
+[module/backlightsetter]
+
+type = custom/text
+content = "󰃜"
+
+click-left = brightnessctl set 30%
+click-middle = brightnessctl set 100%
+click-right = brightnessctl set 1
+
+scroll-up = brightnessctl set +5%
+scroll-down = brightnessctl set 5%-
+
+content-background = ${colors.background_module-prefix}
+content-foreground = ${colors.foreground_module-prefix}
+content-padding = 1
+
 ; vim:ft=dosini

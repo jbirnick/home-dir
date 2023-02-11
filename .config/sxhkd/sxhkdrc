@@ -125,3 +125,9 @@ super + {t,shift + t,y,u}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
+
+## DISPLAY BRIGHTNESS
+
+# set display brightness
+super + {0,1,2,3}
+    brightnessctl set {0,1,30%,100%}
