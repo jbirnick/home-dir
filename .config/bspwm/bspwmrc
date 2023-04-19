@@ -7,7 +7,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 ## DECIDE MONITORSETUP
 
-monitorsetup=$(echo -e "mobile\nwith_dock" | dmenu -i -p "Choose a monitor setup:")
+monitorsetup=$(echo -e "mobile\nwith_dock\nextra_monitor" | dmenu -i -p "Choose a monitor setup:")
 
 ## MONITORS
 
@@ -17,6 +17,12 @@ case $monitorsetup in
     bspc monitor eDP-1 -r
     bspc monitor DP-1-1 -d s d f
     bspc monitor DP-1-3 -d w e r
+    ;;
+  extra_monitor)
+    ~/.screenlayout/extra_monitor.sh
+    bspc wm -O eDP-1 HDMI-1
+    bspc monitor eDP-1 -d s d f
+    bspc monitor HDMI-1 -d w e r
     ;;
   mobile|*)
     ~/.screenlayout/mobile.sh
@@ -39,6 +45,10 @@ case $monitorsetup in
   with_dock)
     polybar mybar_DP-1-1 &
     polybar mybar_DP-1-3 &
+    ;;
+  extra_monitor)
+    polybar mybar_half &
+    polybar mybar_HDMI-1 &
     ;;
   mobile|*)
     polybar mybar_full &

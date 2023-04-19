@@ -47,11 +47,6 @@ borg create ::documents_${suffix}             './Documents'
 check_borg_return_code $?
 echo "finished."
 
-echo -n "Backing up archived documents ... "
-borg create ::archived-documents_${suffix}    './Archived Documents'
-check_borg_return_code $?
-echo "finished."
-
 echo -n "Backing up library ... "
 borg create ::library_${suffix}               './Library'
 check_borg_return_code $?
