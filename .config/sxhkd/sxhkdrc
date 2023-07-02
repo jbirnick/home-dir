@@ -8,6 +8,14 @@ super + Escape
 super + alt + {c,r}
 	bspc {quit,wm -r}
 
+# lock screen
+super + alt + l
+    dm-tool lock
+
+# set display brightness
+super + {0,1,2,3}
+    brightnessctl set {0,1,30%,100%}
+
 ## PROGRAM SHORTCUTS
 
 # .desktop/binary launcher
@@ -27,7 +35,7 @@ super + {_,shift + }c
 ## LOCAL FOCUS/SWAP
 
 # focus/swap the node in the given direction
-super + {_,shift + }{j,k,l,semicolon}
+super + {_,shift + }{j,k,h,l}
 	bspc node -{f,s} {south,north,west,east}
 
 # focus the node for the given path jump
@@ -41,11 +49,11 @@ super + {_,shift + }n
 ## WINDOW RESIZING
 
 # expand a window by moving one of its side outward
-super + alt + {j,k,l,semicolon}
+super + alt + {j,k,h,l}
 	bspc node -z {bottom 0 20,top 0 -20,left -20 0,right 20 0}
 
 # contract a window by moving one of its side inward
-super + alt + shift + {j,k,l,semicolon}
+super + alt + shift + {j,k,h,l}
 	bspc node -z {top 0 20,bottom 0 -20,right -20 0,left 20 0}
 
 ## FLOATING WINDOW MOVING
@@ -57,7 +65,7 @@ super + {Left,Down,Up,Right}
 ## WINDOW PRESELECTION
 
 # preselect the direction
-super + ctrl + {j,k,l,semicolon}
+super + ctrl + {j,k,h,l}
 	bspc node -p {south,north,west,east}
 
 # preselect the ratio
@@ -125,9 +133,3 @@ super + {t,shift + t,y,u}
 # set the node flags
 super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
-
-## DISPLAY BRIGHTNESS
-
-# set display brightness
-super + {0,1,2,3}
-    brightnessctl set {0,1,30%,100%}
